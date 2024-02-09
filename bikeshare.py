@@ -39,7 +39,7 @@ def get_filters():
     print('-'*40)
     return city, month, day
 
-# load the data and create dataframe
+# Load the data and create dataframe
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
@@ -51,14 +51,14 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    # read the data
+    # Read the data
     df = pd.read_csv(CITY_DATA[city])
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     # create month and day_of_week column
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     
-    # month convert to the corresponding number
+    # Month convert to the corresponding number
     month = month_list.index(month) + 1
     # filer by month
     if month != 13:
@@ -68,7 +68,7 @@ def load_data(city, month, day):
         df = df[df['day_of_week'] == day.capitalize()]
     return df
 
-# filter the dataframe by user input
+# Filter the dataframe by user input
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
@@ -91,7 +91,7 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-# print station statistical data
+# Print station statistical data
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
@@ -114,7 +114,7 @@ def station_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-# print trip duration statistical data
+# Print trip duration statistical data
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
@@ -132,7 +132,7 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-# print user statistical data
+# Print user statistical data
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
