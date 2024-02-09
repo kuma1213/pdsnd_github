@@ -6,7 +6,6 @@ This project file was created on 4th February in 2024.
 README was created on 10th February in 2024.
 
 ### Project Title
-<<<<<<< HEAD
 ***
 Explore US Bikeshare Data
 
